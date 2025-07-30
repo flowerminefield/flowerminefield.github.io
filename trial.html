@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>HTTP to HTTPS Redirect Banner</title>
+  <style>
+    #https-banner {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 12px;
+      background-color: #ffcc00;
+      color: black;
+      font-size: 10px;
+      text-align: center;
+      line-height: 12px;
+      z-index: 9999;
+    }
+    #https-banner a {
+      color: black;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<div id="https-banner">
+  You're using HTTP — <a href="" id="https-link">Switch to secure HTTPS</a>
+</div>
+
+<script>
+  if (location.protocol === 'http:') {
+    const banner = document.getElementById('https-banner');
+    const link = document.getElementById('https-link');
+    link.href = 'https://' + location.hostname + location.pathname + location.search + location.hash;
+    banner.style.display = 'block';
+  }
+</script>
+
+</body>
+</html>
