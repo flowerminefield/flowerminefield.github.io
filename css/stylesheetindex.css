@@ -1,7 +1,15 @@
 body {
   background-color: #1c1c1c;
   font-family: Monospace;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
+
+footer {
+  margin-top: auto; /* pushes footer to bottom */
+}
+
 ul {
   display: inline-block;
   text-align: left;
@@ -16,19 +24,17 @@ ul {
   color: #c45194;
 }
 
-/* Styles for all screen sizes */
 .image-container {
-  text-align: center; /* Centers the image horizontally */
+  text-align: center;
 }
 
 .responsive-image {
-  max-width: 80%; /* Sets a default width for desktop */
-  height: auto;  /* Maintains aspect ratio */
+  max-width: 80%; 
+  height: auto;
 }
 
-/* Styles specifically for mobile devices */
 @media (max-width: 600px) {
   .responsive-image {
-  max-width: 100%; /* Makes the image take up the full width on small screens */
+  max-width: 100%;
   }
 }
