@@ -7,6 +7,14 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
+        /* Make Twemoji / flags smaller */
+img.emoji {
+    height: 1.4em !important;
+    width: 1.4em !important;
+    vertical-align: -0.1em;
+    margin: 0 0.1em;
+}
+
         @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap');
         
         :root {
@@ -29,8 +37,22 @@
             border-radius: 4px;
         }
     </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/twemoji@14.0.2/dist/twemoji.min.js" crossorigin="anonymous"></script>
+
 </head>
 <body class="bg-zinc-950 text-zinc-100 min-h-screen">
+
+    <script>
+    // Run Twemoji after page loads
+    window.addEventListener('load', () => {
+        twemoji.parse(document.body, {
+            folder: 'svg',
+            ext: '.svg'
+        });
+    });
+</script>
+
     <div class="max-w-3xl mx-auto px-6 py-12">
         <!-- Header -->
         <header class="flex justify-between items-center mb-16 border-b border-zinc-800 pb-8">
@@ -60,6 +82,12 @@
                            class="text-xl text-zinc-200 hover:text-purple-400 break-all">
                             waffle@a04.org
                         </a>
+                        <br>
+                        <p class="text-zinc-500 text-sm uppercase tracking-widest mb-1">Discord</p>
+                        <a href="https://discord.com/users/1037868829243617381" 
+                           class="text-xl text-zinc-200 hover:text-purple-400 break-all">
+                            wafflecookie
+                        </a>
                     </div>
 
                     <!-- <div>
@@ -82,7 +110,11 @@
 
                     <div class="pt-6 border-t border-zinc-800">
                         <p class="text-zinc-400 text-sm leading-relaxed">
+
+                        <p class="text-xl flex items-center justify-center gap-3 my-6">
                             I am Waffle
+                            <span class="text-xl">🇦🇺</span>
+                            <span class="text-xl">🏳️‍⚧️</span>
                         </p>
                     </div>
                 </div>
