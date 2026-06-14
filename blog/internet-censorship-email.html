@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bypassing internet censorship using emails — a04.org</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+        
+        :root {
+            --accent-purple: #a855f7;
+            --accent-pink: #ec4899;
+            --accent-red: #ef4444;
+        }
+        
+        body {
+            font-family: 'IBM Plex Mono', ui-monospace, monospace;
+        }
+        
+        .accent-gradient {
+            background: linear-gradient(90deg, var(--accent-purple), var(--accent-pink), var(--accent-red));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .card {
+            border-radius: 4px;
+        }
+        
+        .prose {
+            font-family: 'IBM Plex Mono', ui-monospace, monospace;
+        }
+        
+        .prose h1, .prose h2, .prose h3 {
+            font-weight: 600;
+            letter-spacing: -0.025em;
+        }
+    </style>
+</head>
+<body class="bg-zinc-950 text-zinc-100 min-h-screen">
+    <div class="max-w-3xl mx-auto px-6 py-12">
+        <!-- Header -->
+        <header class="flex justify-between items-center mb-16 border-b border-zinc-800 pb-8">
+            <div>
+                <h1 class="text-4xl font-semibold tracking-tighter">A04</h1>
+                <p class="text-zinc-400 text-sm mt-1">digital garden / thoughts / experiments</p>
+            </div>
+            <nav class="flex gap-6 text-sm uppercase tracking-widest">
+<a href="/index.html" class="hover:text-red-400">Home</a>
+<a href="/blog" class="text-purple-400">Blog</a>
+<a href="/links.html" class="hover:text-red-400">Links</a>
+<a href="/contact.html" class="hover:text-red-400">Contact</a>
+            </nav>
+        </header>
+
+        <!-- Blog Post -->
+        <article class="card border border-zinc-800 p-10">
+            <!-- Title -->
+            <h1 class="text-5xl font-bold tracking-tighter mb-4">
+                Bypassing internet censorship using emails
+            </h1>
+            
+            <!-- Meta -->
+            <div class="flex items-center gap-4 text-sm text-zinc-500 mb-12">
+                <span>19 August, 2026</span>
+                <span class="w-1 h-1 bg-zinc-700 rounded-full"></span>
+            </div>
+
+            <!-- Content -->
+            <div class="prose text-zinc-200 text-[17px] leading-relaxed max-w-none space-y-8">
+                <p>So in my spare time I worked on many ways to get access to telegram messaging on the networks in my place of education but non of them worked the closest I got to working was using a sketchy telegram proxy and when I send a text message they would only send and receive every like 50-70 minutes so I tried other methods and realised emails aren’t blocked I can use the education email (office 365) I won’t though because they are filtered but my other options are gmail, iCloud, hotmail and cock.li so that part is sorted and onto how it works with messaging services such as discord, matrix, irc, telegram etc you can make bots and run programs for them to bridge for example you can bridge a discord channel with a telegram group chat so the two chats have the same content and same messages just messages from discord will send from the bot on telegram vice versus and I haven’t seen many bridges between telegram and email actually non at all that are easy to use so I coded a Telegram to Email bridge in node.js to run on my personal home server and it’s job is to every 20 seconds it will check for emails on its email address that contain the word “telegram” in the subject line to avoid spam emails and anything in the body of the emails will be sent to telegram heres an example:</p>
+                <p><em>To: username@email.com</em><br>
+    <em>Subject: telegram</em><br>
+                <em>Body: This is a example</em></p>
+                
+                <a href="/file/tg-email-1.jpg" target="_blank">
+                    <img src="/file/tg-email-1.jpg" 
+                        alt="Image description" 
+                        class="border border-zinc-800 hover:border-purple-500 w-full max-w-3xl mx-auto block my-10">
+                </a>
+
+                <p>and it show up in this format on the telegram end:</p>
+                <p><em>From: username@email.com | 1/12/24 11:34:55</em><br>
+                <em>This is a example</em></p>
+                
+                <a href="/file/tg-email-2.png" target="_blank">
+                    <img src="/file/tg-email-2.png" 
+                        alt="Image description" 
+                        class="border border-zinc-800 hover:border-purple-500 w-full max-w-3xl mx-auto block my-10">
+                </a>
+
+                <p>and messages sent on telegram show up in emails as this:</p>
+                <p><em>From: username@email.com</em><br>
+                <em>To: username@icloud.com</em><br>
+                <em>Subject: Message from Telegram user wafflelab</em><br>
+                <em>Body:</em><br>
+                <em>Username: wafflelab</em><br>
+                <em>Message: example</em><br></p>
+
+                <a href="/file/tg-email-3.png" target="_blank">
+                    <img src="/file/tg-email-3.png" 
+                        alt="Image description" 
+                        class="border border-zinc-800 hover:border-purple-500 w-full max-w-3xl mx-auto block my-10">
+                </a>
+
+                <p>Edit at 19/08/2024 12:22 PM
+                So I started the server at home with the program running and no access to it and people in the telegram group chat (and I find this very amusing) absolutely nuked the chat causing the bot to send approximately 1000 emails to Google’s gmail SMTP server doing the equivalent of a DDoS attack causing it to block my home server temporarily and I wrote in the code at 2 in the morning for it to say “oh fuck contact the dev @wafflelab” and every time it failed to send a email it spammed “oh fuck contact the dev” lmao</p>
+ 
+                <a href="/file/tg-email-4.png" target="_blank">
+                    <img src="/file/tg-email-4.png" 
+                        alt="Image description" 
+                        class="border border-zinc-800 hover:border-purple-500 w-full max-w-3xl mx-auto block my-10">
+                </a>
+
+            </div>
+        </article>
+
+        <!-- Back -->
+        <div class="mt-12 text-center">
+            <a href="../blog" 
+               class="text-zinc-500 hover:text-zinc-300 text-sm flex items-center justify-center gap-2">
+                ← Back to all posts
+            </a>
+        </div>
+    </div>
+</body>
+</html>
