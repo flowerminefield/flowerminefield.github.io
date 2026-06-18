@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Title — a04.org</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+        
+        :root {
+            --accent-purple: #a855f7;
+            --accent-pink: #ec4899;
+            --accent-red: #ef4444;
+        }
+        
+        body {
+            font-family: 'IBM Plex Mono', ui-monospace, monospace;
+        }
+        
+        .accent-gradient {
+            background: linear-gradient(90deg, var(--accent-purple), var(--accent-pink), var(--accent-red));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .card {
+            border-radius: 4px;
+        }
+        
+        .prose {
+            font-family: 'IBM Plex Mono', ui-monospace, monospace;
+        }
+        
+        .prose h1, .prose h2, .prose h3 {
+            font-weight: 600;
+            letter-spacing: -0.025em;
+        }
+    </style>
+</head>
+<body class="bg-zinc-950 text-zinc-100 min-h-screen">
+    <div class="max-w-3xl mx-auto px-6 py-12">
+        <!-- Header -->
+        <header class="flex justify-between items-center mb-16 border-b border-zinc-800 pb-8">
+            <div>
+                <h1 class="text-4xl font-semibold tracking-tighter">A04</h1>
+                <p class="text-zinc-400 text-sm mt-1">digital garden / thoughts / experiments</p>
+            </div>
+            <nav class="flex gap-6 text-sm uppercase tracking-widest">
+<a href="/index.html" class="hover:text-red-400">Home</a>
+<a href="/blog" class="text-purple-400">Blog</a>
+<a href="/links.html" class="hover:text-red-400">Links</a>
+<a href="http://card.a04.org" class="hover:text-red-400">Contact</a>
+            </nav>
+        </header>
+
+        <!-- Blog Post -->
+        <article class="card border border-zinc-800 p-10">
+            <!-- Title -->
+            <h1 class="text-5xl font-bold tracking-tighter mb-4">
+                Your Post Title Here
+            </h1>
+            
+            <!-- Meta -->
+            <div class="flex items-center gap-4 text-sm text-zinc-500 mb-12">
+                <span>June 13, 2026</span>
+                <span class="w-1 h-1 bg-zinc-700 rounded-full"></span>
+                <span>~8 min read</span>
+            </div>
+
+            <!-- Content -->
+            <div class="prose text-zinc-200 text-[17px] leading-relaxed max-w-none space-y-8">
+                <p>Write your content here...</p>
+
+                <a href="/file/moth/1.png" target="_blank">
+                <img src="/file/moth/1.png" 
+                    alt="moth" 
+                    class="border border-zinc-800 hover:border-purple-500 w-full max-w-3xl mx-auto block my-10">
+                </a>
+
+                <a href="/file/moth/2.png" target="_blank">
+                <img src="/file/moth/2.png" 
+                    alt="moth" 
+                    class="border border-zinc-800 hover:border-purple-500 w-full max-w-3xl mx-auto block my-10">
+                </a>
+
+                <a href="/file/moth/3.png" target="_blank">
+                <img src="/file/moth/3.png" 
+                    alt="moth" 
+                    class="border border-zinc-800 hover:border-purple-500 w-full max-w-3xl mx-auto block my-10">
+                </a>
+
+                <a href="/file/moth/4.png" target="_blank">
+                <img src="/file/moth/4.png" 
+                    alt="moth" 
+                    class="border border-zinc-800 hover:border-purple-500 w-full max-w-3xl mx-auto block my-10">
+                </a>
+
+                <h2>Section Title</h2>
+                <p>Paragraph text. Keep the monospace feel. Code snippets, thoughts, whatever.</p>
+                
+                <!-- Example code block -->
+                <pre class="bg-zinc-900 border border-zinc-800 p-6 overflow-x-auto text-sm"><code>console.log("Hello from the other side");</code></pre>
+                
+                <p>More content...</p>
+            </div>
+        </article>
+
+        <!-- Back -->
+        <div class="mt-12 text-center">
+            <a href="../blog" 
+               class="text-zinc-500 hover:text-zinc-300 text-sm flex items-center justify-center gap-2">
+                ← Back to all posts
+            </a>
+        </div>
+    </div>
+</body>
+</html>
