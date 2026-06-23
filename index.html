@@ -1,97 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>a04.org</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap');
-        
-        :root {
-            --accent-purple: #a855f7;
-            --accent-pink: #ec4899;
-            --accent-red: #ef4444;
-        }
-        
-        body {
-            font-family: 'IBM Plex Mono', ui-monospace, monospace;
-        }
-        
-        .accent-gradient {
-            background: linear-gradient(90deg, var(--accent-purple), var(--accent-pink), var(--accent-red));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        .card {
-            border-radius: 4px;
-        }
-        
-        .bulletin {
-            font-family: 'IBM Plex Mono', ui-monospace, monospace;
-            white-space: pre-line;
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+:root{--g1:#7a7a7a;--g2:#fff;--bg:#000}
+body{
+margin:0;
+height:100vh;
+background:var(--bg);
+display:flex;
+justify-content:flex-start;
+align-items:flex-start;
+}
+div{
+white-space:pre-line;
+font-family:sans-serif;
+font-size:15px;
+padding:18px;
+background:linear-gradient(90deg,var(--g1),var(--g2));
+-webkit-background-clip:text;
+background-clip:text;
+color:transparent;
+}
+</style>
 </head>
-<body class="bg-zinc-950 text-zinc-100 min-h-screen">
-    <div class="max-w-3xl mx-auto px-6 py-12">
-        <!-- Header -->
-        <header class="flex justify-between items-center mb-16 border-b border-zinc-800 pb-8">
-            <div>
-                <h1 class="text-4xl font-semibold tracking-tighter">A04</h1>
-                <p class="text-zinc-400 text-sm mt-1">digital garden / thoughts / experiments</p>
-            </div>
-            <nav class="flex gap-6 text-sm uppercase tracking-widest">
-<a href="/index.html" class="text-purple-400">Home</a>
-<a href="/blog" class="hover:text-red-400">Blog</a>
-<a href="/links.html" class="hover:text-red-400">Links</a>
-<a href="http://card.a04.org" class="hover:text-red-400">Contact</a>
-            </nav>
-        </header>
+<body>
+<script>
+let t=`** FUCKED BY POPBOBORG / ZOINBASE.SUPPORT **
 
-        <!-- Hero -->
-        <section class="mb-24 text-center">
-            <div class="accent-gradient text-7xl font-bold tracking-tighter mb-6">
-                hello, world.
-            </div>
-            <p class="text-2xl text-zinc-400 max-w-lg mx-auto">
-                I write about code, life, and whatever else is on my mind.
-            </p>
-        </section>
+FUCK NIGGERS
+ZOINBASE4LIFE
+FREE UP THE NIGS ADAM SUMO, TOMMY GUN AND EDDY
 
-        <!-- Bulletin Board -->
-        <section class="mb-16">
-            <div id="bulletin" 
-                 class="card border border-zinc-800 p-8 bg-zinc-900 text-zinc-300 text-sm leading-relaxed bulletin min-h-[100px]">
-                Loading notices...
-            </div>
-        </section>
+Repiercing was here (repiercing.zoinbase.support)
+DayTwo Coinbase Was here
+Maddox was here
+JaponKY was here
+RicoZoinbase was here
 
-        <!-- Read Blog Button -->
-        <div class="flex justify-center">
-            <a href="blog/" 
-               class="accent-gradient inline-block px-12 py-6 text-2xl font-medium tracking-widest border border-transparent hover:border-purple-500">
-                READ BLOG
-            </a>
-        </div>
+Hippity Hoppity Your Crypto is now my property BYE NIGGERS
 
-        <footer class="text-center text-zinc-500 text-sm pt-20 border-t border-zinc-800 mt-24">
-            <p>© 2026 wafflecookie. Built with spite and caffeine.</p>
-        </footer>
-    </div>
+* gosh that chinese family at the other table sure ate a lot *`;
 
-    <script>
-        fetch('notice.txt')
-            .then(r => r.ok ? r.text() : Promise.reject())
-            .then(text => {
-                const bulletin = document.getElementById('bulletin');
-                bulletin.textContent = text.trim() || "No notices.";
-            })
-            .catch(() => {
-                document.getElementById('bulletin').innerHTML = "No notices at the moment.";
-            });
-    </script>
+let d=document.createElement("div");
+d.textContent=t;
+document.body.appendChild(d);
+</script>
 </body>
 </html>
