@@ -1,1 +1,1 @@
-Bleh
+Making a ESP32 based lighting system I'll blog about it once its built to a functional order :3
