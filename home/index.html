@@ -96,13 +96,31 @@ footer{
     </div>
   </section>
 
+  <section>
+    <h2>Self-hosted</h2>
+    <div class="list">
+      <a class="row" href="https://media.a04.org:9999" target="_blank" rel="noopener"><span class="icon">C</span>Copyparty</a>
+      <a class="row" href="https://chat.a04.org" target="_blank" rel="noopener"><span class="icon">M</span>Matrix</a>
+    </div>
+  </section>
+
   <footer>a04.org</footer>
 </main>
 
 <script>
+function note(h){
+  if(h>=5&&h<8)return'up early';
+  if(h>=8&&h<11)return'good morning';
+  if(h>=11&&h<14)return'midday check-in';
+  if(h>=14&&h<18)return'afternoon grind';
+  if(h>=18&&h<22)return'evening wind down';
+  return'late night mode';
+}
 function tick(){
   var d=new Date();
-  document.getElementById('clock').textContent=d.toLocaleDateString(undefined,{weekday:'short',month:'short',day:'numeric'})+' — '+d.toLocaleTimeString();
+  document.getElementById('clock').textContent=
+    d.toLocaleDateString(undefined,{weekday:'short',month:'short',day:'numeric'})+' — '+
+    d.toLocaleTimeString()+' · '+note(d.getHours());
 }
 tick();setInterval(tick,1000);
 </script>
