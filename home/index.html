@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>a04.org</title>
+<style>
+:root{
+  --md-bg:#141318;
+  --md-surface:#1d1c22;
+  --md-surface-high:#262530;
+  --md-outline:#48454e;
+  --md-on-surface:#e5e1e9;
+  --md-on-surface-var:#c9c5d0;
+  --md-primary:#c6bfff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  background:var(--md-bg);
+  color:var(--md-on-surface);
+  font-family:"Google Sans","Segoe UI",Roboto,system-ui,sans-serif;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:2rem 1rem;
+}
+main{width:100%;max-width:600px}
+header{margin-bottom:2.25rem}
+h1{font-size:1.75rem;font-weight:400;letter-spacing:0}
+.clock{color:var(--md-on-surface-var);font-size:.9rem;margin-top:.4rem;font-weight:400}
+section{margin-bottom:1.5rem}
+h2{
+  font-size:.8rem;
+  color:var(--md-on-surface-var);
+  margin-bottom:.7rem;
+  font-weight:500;
+  padding-left:.25rem;
+}
+.list{
+  background:var(--md-surface);
+  border-radius:28px;
+  overflow:hidden;
+}
+a.row{
+  display:flex;
+  align-items:center;
+  gap:.9rem;
+  padding:.95rem 1.25rem;
+  color:var(--md-on-surface);
+  text-decoration:none;
+  font-size:.95rem;
+  font-weight:400;
+}
+a.row + a.row{
+  border-top:1px solid var(--md-surface-high);
+}
+.icon{
+  width:36px;height:36px;border-radius:50%;
+  background:var(--md-surface-high);
+  color:var(--md-primary);
+  display:flex;align-items:center;justify-content:center;
+  font-size:.85rem;font-weight:500;
+  flex-shrink:0;
+}
+footer{
+  margin-top:1.5rem;
+  color:var(--md-on-surface-var);
+  font-size:.8rem;
+  padding-left:.25rem;
+}
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>a04.org</h1>
+    <div class="clock" id="clock"></div>
+  </header>
+
+  <section>
+    <h2>Mail</h2>
+    <div class="list">
+      <a class="row" href="https://webmail.disroot.org" target="_blank" rel="noopener"><span class="icon">D</span>Disroot</a>
+      <a class="row" href="https://outlook.office.com/mail/" target="_blank" rel="noopener"><span class="icon">O</span>Outlook 365</a>
+      <a class="row" href="https://mail.purelymail.com" target="_blank" rel="noopener"><span class="icon">P</span>Purely Mail</a>
+      <a class="row" href="https://mail.google.com" target="_blank" rel="noopener"><span class="icon">G</span>Gmail</a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Social</h2>
+    <div class="list">
+      <a class="row" href="https://instagram.com" target="_blank" rel="noopener"><span class="icon">I</span>Instagram</a>
+      <a class="row" href="https://twitter.com" target="_blank" rel="noopener"><span class="icon">X</span>Twitter / X</a>
+    </div>
+  </section>
+
+  <footer>a04.org</footer>
+</main>
+
+<script>
+function tick(){
+  var d=new Date();
+  document.getElementById('clock').textContent=d.toLocaleDateString(undefined,{weekday:'short',month:'short',day:'numeric'})+' — '+d.toLocaleTimeString();
+}
+tick();setInterval(tick,1000);
+</script>
+</body>
+</html>
